@@ -12,7 +12,7 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
     @Override
     public Fragment getItem(int position) {
-        return PlaceholderFragment.newInstance(position + 1);
+        return FragmentAlpha.newInstance(position + 1);
     }
 
     @Override

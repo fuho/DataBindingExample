@@ -7,14 +7,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-public class PlaceholderFragment extends Fragment {
+public class FragmentAlpha extends Fragment {
     private static final String ARG_SECTION_NUMBER = "section_number";
 
-    public PlaceholderFragment() {
+    public FragmentAlpha() {
     }
 
-    public static PlaceholderFragment newInstance(int sectionNumber) {
-        PlaceholderFragment fragment = new PlaceholderFragment();
+    public static FragmentAlpha newInstance(int sectionNumber) {
+        FragmentAlpha fragment = new FragmentAlpha();
         Bundle args = new Bundle();
         args.putInt(ARG_SECTION_NUMBER, sectionNumber);
         fragment.setArguments(args);
@@ -22,10 +22,12 @@ public class PlaceholderFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState
+    public View onCreateView(
+            LayoutInflater inflater,
+            ViewGroup container,
+            Bundle savedInstanceState
     ) {
-        View rootView = inflater.inflate(R.layout.fragment_main, container, false);
+        View rootView = inflater.inflate(R.layout.alpha_fragment, container, false);
         TextView textView = rootView.findViewById(R.id.section_label);
         textView.setText(
                 getString(R.string.section_format, getArguments().getInt(ARG_SECTION_NUMBER))
