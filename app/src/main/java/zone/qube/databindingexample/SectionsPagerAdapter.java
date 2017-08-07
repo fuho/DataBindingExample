@@ -4,6 +4,8 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
+import zone.qube.databindingexample.alpha.AlphaFragment;
+
 public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
     public SectionsPagerAdapter(FragmentManager fm) {
@@ -12,7 +14,12 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
     @Override
     public Fragment getItem(int position) {
-        return FragmentAlpha.newInstance(position + 1);
+        switch (position){
+            case 0:
+                return AlphaFragment.newInstance();
+            default:
+                return AlphaFragment.newInstance();
+        }
     }
 
     @Override
