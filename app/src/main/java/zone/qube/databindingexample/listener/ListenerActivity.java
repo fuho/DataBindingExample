@@ -1,18 +1,20 @@
-package zone.qube.databindingexample.simple;
+package zone.qube.databindingexample.listener;
 
+import android.os.Bundle;
 import android.support.design.widget.TabLayout;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-
-import android.support.v4.view.ViewPager;
-import android.os.Bundle;
 
 import zone.qube.databindingexample.R;
 import zone.qube.databindingexample.SectionsPagerAdapter;
 import zone.qube.databindingexample.SwitchActivityFragment;
-import zone.qube.databindingexample.user.UserActivity;
+import zone.qube.databindingexample.simple.BasicsActivity;
+import zone.qube.databindingexample.user.EmailFragment;
+import zone.qube.databindingexample.user.UserFragment;
+import zone.qube.databindingexample.user.UserModel;
 
-public class BasicsActivity extends AppCompatActivity {
+public class ListenerActivity extends AppCompatActivity {
 
     private SectionsPagerAdapter mSectionsPagerAdapter;
     private ViewPager mViewPager;
@@ -26,12 +28,12 @@ public class BasicsActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
         mSectionsPagerAdapter.screens.add(new SectionsPagerAdapter.Screen(
-                "Simple",
-                SimpleFragment.newInstance()
+                "WTF is :: ?",
+                ListenerFragment.newInstance()
         ));
         mSectionsPagerAdapter.screens.add(new SectionsPagerAdapter.Screen(
                 "Next",
-                SwitchActivityFragment.newInstance(UserActivity.class)
+                SwitchActivityFragment.newInstance(BasicsActivity.class)
         ));
 
 

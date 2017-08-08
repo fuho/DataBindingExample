@@ -9,7 +9,7 @@ import android.support.v7.widget.Toolbar;
 import zone.qube.databindingexample.R;
 import zone.qube.databindingexample.SectionsPagerAdapter;
 import zone.qube.databindingexample.SwitchActivityFragment;
-import zone.qube.databindingexample.simple.BasicsActivity;
+import zone.qube.databindingexample.listener.ListenerActivity;
 
 public class UserActivity extends AppCompatActivity {
 
@@ -24,25 +24,25 @@ public class UserActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
-                mSectionsPagerAdapter.screens.add(new SectionsPagerAdapter.Screen(
-                        "User",
-                        UserFrag.newInstance(new UserModel("John", "Smith", "jsmith12@yahoo.com"))
+        mSectionsPagerAdapter.screens.add(new SectionsPagerAdapter.Screen(
+                "User",
+                UserFragment.newInstance(new UserModel("John", "Smith", "jsmith12@yahoo.com"))
         ));
         mSectionsPagerAdapter.screens.add(new SectionsPagerAdapter.Screen(
                 "Null email",
-                UserFrag.newInstance(new UserModel("Abraham", "Lincoln", null))
+                UserFragment.newInstance(new UserModel("Abraham", "Lincoln", null))
         ));
         mSectionsPagerAdapter.screens.add(new SectionsPagerAdapter.Screen(
                 "Empty email",
-                EmailUserFrag.newInstance(new UserModel("Userwith", "EmptyEmail", ""))
+                EmailFragment.newInstance(new UserModel("Userwith", "EmptyEmail", ""))
         ));
         mSectionsPagerAdapter.screens.add(new SectionsPagerAdapter.Screen(
                 "Valid email",
-                EmailUserFrag.newInstance(new UserModel("Didg", "Eridoo", "didg@eridoo.com"))
+                EmailFragment.newInstance(new UserModel("Didg", "Eridoo", "didg@eridoo.com"))
         ));
         mSectionsPagerAdapter.screens.add(new SectionsPagerAdapter.Screen(
                 "Next",
-                SwitchActivityFragment.newInstance(BasicsActivity.class)
+                SwitchActivityFragment.newInstance(ListenerActivity.class)
         ));
 
 

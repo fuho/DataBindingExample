@@ -8,10 +8,10 @@ import android.view.ViewGroup;
 
 import zone.qube.databindingexample.databinding.SimpleFragmentBinding;
 
-public class SimpleFrag extends Fragment {
+public class SimpleFragment extends Fragment {
 
-    public static SimpleFrag newInstance() {
-        return new SimpleFrag();
+    public static SimpleFragment newInstance() {
+        return new SimpleFragment();
     }
 
     @Override

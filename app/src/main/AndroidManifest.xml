@@ -24,6 +24,11 @@
             android:label="User stuff"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
+        <activity
+            android:name=".listener.ListenerActivity"
+            android:label="Listeners"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
     </application>
 
 </manifest>

@@ -17,7 +17,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:padding="16dp"
-        tools:context="zone.qube.databindingexample.simple.SimpleFrag">
+        tools:context="zone.qube.databindingexample.simple.SimpleFragment">
 
         <TextView
             android:layout_width="wrap_content"
