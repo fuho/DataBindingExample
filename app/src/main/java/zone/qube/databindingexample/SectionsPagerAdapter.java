@@ -1,8 +1,11 @@
 package zone.qube.databindingexample;
 
+import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+
+import java.util.ArrayList;
 
 import zone.qube.databindingexample.alpha.AlphaFragment;
 import zone.qube.databindingexample.beta.BetaFragment;
@@ -10,39 +13,50 @@ import zone.qube.databindingexample.beta.UserModel;
 
 public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
+    private ArrayList<Screen> mScreens = new ArrayList<>();
+
+    {
+        mScreens.add(new Screen(
+                "Simple",
+                AlphaFragment.newInstance()
+        ));
+        mScreens.add(new Screen(
+                "Usr A",
+                BetaFragment.newInstance(new UserModel("John", "Smith", "jsmith12@yahoo.com"))
+        ));
+        mScreens.add(new Screen(
+                "Usr B",
+                BetaFragment.newInstance(new UserModel("Abraham", "Lincoln", null))
+        ));
+
+    }
+
     public SectionsPagerAdapter(FragmentManager fm) {
         super(fm);
     }
 
     @Override
     public Fragment getItem(int position) {
-        switch (position){
-            case 0:
-                return AlphaFragment.newInstance();
-            case 1:
-                return BetaFragment.newInstance(new UserModel("John", "Smith", "jsmith12@yahoo.com"));
-            case 2:
-                return BetaFragment.newInstance(new UserModel("Abraham", "Lincoln", null));
-            default:
-                return AlphaFragment.newInstance();
-        }
+        return mScreens.get(position).fragment;
     }
 
     @Override
     public int getCount() {
-        return 3;
+        return mScreens.size();
     }
 
     @Override
     public CharSequence getPageTitle(int position) {
-        switch (position) {
-            case 0:
-                return "Alpha Fragment";
-            case 1:
-                return "Beta Fragment";
-            case 2:
-                return "SECTION 3";
+        return mScreens.get(position).name;
+    }
+
+    private class Screen {
+        @NonNull private final String name;
+        @NonNull private final Fragment fragment;
+
+        public Screen(@NonNull final String name, @NonNull Fragment fragment) {
+            this.name = name;
+            this.fragment = fragment;
         }
-        return null;
     }
 }
