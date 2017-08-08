@@ -17,7 +17,7 @@ public class AlphaFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle bundle) {
         final AlphaFragmentBinding binding = AlphaFragmentBinding.inflate(inflater);
-        binding.setExample(new ExampleModel());
+        binding.setExample(new AlphaModel());
         return binding.getRoot();
     }
 }

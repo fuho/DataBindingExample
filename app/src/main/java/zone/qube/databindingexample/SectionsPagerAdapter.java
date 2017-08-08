@@ -5,6 +5,8 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
 import zone.qube.databindingexample.alpha.AlphaFragment;
+import zone.qube.databindingexample.beta.BetaFragment;
+import zone.qube.databindingexample.beta.UserModel;
 
 public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
@@ -17,6 +19,10 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
         switch (position){
             case 0:
                 return AlphaFragment.newInstance();
+            case 1:
+                return BetaFragment.newInstance(new UserModel("John", "Smith", "jsmith12@yahoo.com"));
+            case 2:
+                return BetaFragment.newInstance(new UserModel("Abraham", "Lincoln", null));
             default:
                 return AlphaFragment.newInstance();
         }
@@ -31,9 +37,9 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
     public CharSequence getPageTitle(int position) {
         switch (position) {
             case 0:
-                return "SECTION 1";
+                return "Alpha Fragment";
             case 1:
-                return "SECTION 2";
+                return "Beta Fragment";
             case 2:
                 return "SECTION 3";
         }
