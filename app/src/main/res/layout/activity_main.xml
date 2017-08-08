@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="zone.qube.databindingexample.MainActivity">
+    tools:context="zone.qube.databindingexample.simple.BasicsActivity">
 
     <android.support.design.widget.AppBarLayout
         android:id="@+id/appbar"

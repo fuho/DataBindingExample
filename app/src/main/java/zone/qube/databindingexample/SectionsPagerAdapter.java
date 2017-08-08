@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
-    ArrayList<Screen> screens = new ArrayList<>();
+    public ArrayList<Screen> screens = new ArrayList<>();
 
 
     public SectionsPagerAdapter(FragmentManager fm) {

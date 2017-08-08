@@ -1,4 +1,4 @@
-package zone.qube.databindingexample;
+package zone.qube.databindingexample.user;
 
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
@@ -6,9 +6,10 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
-import zone.qube.databindingexample.user.EmailUserFrag;
-import zone.qube.databindingexample.user.UserFrag;
-import zone.qube.databindingexample.user.UserModel;
+import zone.qube.databindingexample.R;
+import zone.qube.databindingexample.SectionsPagerAdapter;
+import zone.qube.databindingexample.SwitchActivityFragment;
+import zone.qube.databindingexample.simple.BasicsActivity;
 
 public class UserActivity extends AppCompatActivity {
 
@@ -41,7 +42,7 @@ public class UserActivity extends AppCompatActivity {
         ));
         mSectionsPagerAdapter.screens.add(new SectionsPagerAdapter.Screen(
                 "Next",
-                SwitchActivityFragment.newInstance(MainActivity.class)
+                SwitchActivityFragment.newInstance(BasicsActivity.class)
         ));
 
 
