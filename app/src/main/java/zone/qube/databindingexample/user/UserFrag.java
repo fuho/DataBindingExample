@@ -1,4 +1,4 @@
-package zone.qube.databindingexample.beta;
+package zone.qube.databindingexample.user;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -7,25 +7,23 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import zone.qube.databindingexample.alpha.AlphaModel;
-import zone.qube.databindingexample.databinding.AlphaFragmentBinding;
-import zone.qube.databindingexample.databinding.BetaFragmentBinding;
+import zone.qube.databindingexample.databinding.UserBinding;
 
-public class BetaFragment extends Fragment {
+public class UserFrag extends Fragment {
 
     private static final String KEY_USERMODEL = "key:user_model";
 
-    public static BetaFragment newInstance(@Nullable final UserModel userModel) {
-        final BetaFragment betaFragment = new BetaFragment();
+    public static UserFrag newInstance(@Nullable final UserModel userModel) {
+        final UserFrag userFrag = new UserFrag();
         final Bundle args = new Bundle();
         args.putSerializable(KEY_USERMODEL, userModel);
-        betaFragment.setArguments(args);
-        return betaFragment;
+        userFrag.setArguments(args);
+        return userFrag;
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle bundle) {
-        final BetaFragmentBinding binding = BetaFragmentBinding.inflate(inflater);
+        final UserBinding binding = UserBinding.inflate(inflater);
         binding.setUser((UserModel) getArguments().getSerializable(KEY_USERMODEL));
         return binding.getRoot();
     }

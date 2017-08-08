@@ -1,4 +1,4 @@
-package zone.qube.databindingexample.beta;
+package zone.qube.databindingexample.user;
 
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;

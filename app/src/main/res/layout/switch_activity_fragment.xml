@@ -3,11 +3,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     >
 
-    <data>
+    <data class="SwitchBinding">
 
         <variable
-            name="example"
-            type="zone.qube.databindingexample.alpha.AlphaModel"
+            name="activityClass"
+            type="java.lang.Class"
+            />
+        <variable
+            name="fragment"
+            type="zone.qube.databindingexample.SwitchActivityFragment"
             />
 
     </data>
@@ -17,24 +21,20 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:padding="16dp"
-        tools:context="zone.qube.databindingexample.alpha.AlphaFragment">
+        >
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@{example.sPublicStaticString}"
+            android:text="Clicking below will launch new activity"
             />
 
-        <TextView
+        <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@{example.privateString}"
-            />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@{example.publicString}"
+            android:text="@{`Launch ` + activityClass.simpleName}"
+            android:onClick="@{() -> fragment.launch()}"
+            tools:text="SomeActivity"
             />
     </LinearLayout>
 </layout>

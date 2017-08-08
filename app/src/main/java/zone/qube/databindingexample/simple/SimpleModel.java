@@ -1,6 +1,6 @@
-package zone.qube.databindingexample.alpha;
+package zone.qube.databindingexample.simple;
 
-public class AlphaModel {
+public class SimpleModel {
     public static String sPublicStaticString = "Public Static String";
     public static String publicString = "Public String directly";
     private String mPrivateString = "Private String with getter";

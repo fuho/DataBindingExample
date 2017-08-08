@@ -6,10 +6,9 @@
     <data>
 
         <variable
-            name="user"
-            type="zone.qube.databindingexample.beta.UserModel"
+            name="example"
+            type="zone.qube.databindingexample.simple.SimpleModel"
             />
-        <import type="android.view.View"/>
 
     </data>
 
@@ -18,31 +17,24 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:padding="16dp"
-        tools:context="zone.qube.databindingexample.beta.BetaFragment">
+        tools:context="zone.qube.databindingexample.simple.SimpleFrag">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Name:"
+            android:text="@{example.sPublicStaticString}"
             />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@{user.firstName +' ' +user.lastName}"
+            android:text="@{example.privateString}"
             />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Email:"
-            android:visibility="@{user.email != null ? View.VISIBLE : View.GONE}"
-            />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@{user.email}"
-            android:visibility="@{user.email != null ? View.VISIBLE : View.GONE}"
+            android:text="@{example.publicString}"
             />
     </LinearLayout>
 </layout>
