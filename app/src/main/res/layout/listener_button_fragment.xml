@@ -7,7 +7,7 @@
 
         <variable
             name="fragment"
-            type="zone.qube.databindingexample.listener.ListenerFragment"
+            type="zone.qube.databindingexample.listener.ButtonListenerFragment"
             />
 
         <import type="android.widget.TextView"/>
@@ -19,7 +19,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:padding="16dp"
-        tools:context="zone.qube.databindingexample.listener.ListenerFragment">
+        tools:context="zone.qube.databindingexample.listener.ButtonListenerFragment">
 
         <TextView
             android:layout_width="match_parent"

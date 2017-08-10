@@ -9,12 +9,12 @@ import android.widget.Toast;
 
 import zone.qube.databindingexample.databinding.ListenerBinding;
 
-public class ListenerFragment extends Fragment {
+public class ButtonListenerFragment extends Fragment {
 
     private boolean mHasToastBeenShown = false;
 
-    public static ListenerFragment newInstance() {
-        return new ListenerFragment();
+    public static ButtonListenerFragment newInstance() {
+        return new ButtonListenerFragment();
     }
 
     @Override

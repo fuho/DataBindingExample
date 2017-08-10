@@ -10,9 +10,6 @@ import zone.qube.databindingexample.R;
 import zone.qube.databindingexample.SectionsPagerAdapter;
 import zone.qube.databindingexample.SwitchActivityFragment;
 import zone.qube.databindingexample.simple.BasicsActivity;
-import zone.qube.databindingexample.user.EmailFragment;
-import zone.qube.databindingexample.user.UserFragment;
-import zone.qube.databindingexample.user.UserModel;
 
 public class ListenerActivity extends AppCompatActivity {
 
@@ -28,8 +25,12 @@ public class ListenerActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
         mSectionsPagerAdapter.screens.add(new SectionsPagerAdapter.Screen(
-                "WTF is :: ?",
-                ListenerFragment.newInstance()
+                "Buttons and ..",
+                ButtonListenerFragment.newInstance()
+        ));
+        mSectionsPagerAdapter.screens.add(new SectionsPagerAdapter.Screen(
+                ".. other widgets",
+                OtherWidgetsListenerFragment.newInstance()
         ));
         mSectionsPagerAdapter.screens.add(new SectionsPagerAdapter.Screen(
                 "Next",
