@@ -1,0 +1,43 @@
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+
+    <data class="ObservableBinding">
+
+        <variable
+            name="user"
+            type="zone.qube.databindingexample.observable.User"
+            />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp"
+        tools:context="zone.qube.databindingexample.user.UserFragment">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{@string/template_name_surname(user.firstName ?? ``, user.lastName?? ``)}"
+            />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:afterTextChanged="@{(editable) -> user.setFirstName(editable.toString())}"
+            android:hint="First Name"
+            />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:afterTextChanged="@{(editable) -> user.setLastName(editable.toString().toUpperCase())}"
+            android:hint="Last Name"
+            />
+
+    </LinearLayout>
+</layout>
