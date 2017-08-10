@@ -23,11 +23,17 @@
             android:name=".user.UserActivity"
             android:label="User stuff"
             android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
         </activity>
         <activity
             android:name=".listener.ListenerActivity"
             android:label="Listeners"
             android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
         </activity>
     </application>
 

@@ -1,7 +1,6 @@
 package zone.qube.databindingexample.listener;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,9 +8,10 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import zone.qube.databindingexample.databinding.ListenerBinding;
-import zone.qube.databindingexample.user.UserModel;
 
 public class ListenerFragment extends Fragment {
+
+    private boolean mHasToastBeenShown = false;
 
     public static ListenerFragment newInstance() {
         return new ListenerFragment();
@@ -24,7 +24,20 @@ public class ListenerFragment extends Fragment {
         return binding.getRoot();
     }
 
-    public void buttonClicked() {
-        Toast.makeText(getContext(), "buttonClicked", Toast.LENGTH_SHORT).show();
+    public boolean hasToastBeenShown(){
+        return mHasToastBeenShown;
     }
+
+
+    // listener binding
+    public void showToast(String text) {
+        mHasToastBeenShown = true;
+        Toast.makeText(getContext(), text, Toast.LENGTH_SHORT).show();
+    }
+
+    // Method reference
+    public void onButtonClick(final View view){
+        showToast(String.format("Button with id %s clicked", view.getId() ));
+    }
+
 }

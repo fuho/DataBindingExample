@@ -10,6 +10,8 @@
             type="zone.qube.databindingexample.listener.ListenerFragment"
             />
 
+        <import type="android.widget.TextView"/>
+
     </data>
 
     <LinearLayout
@@ -19,11 +21,65 @@
         android:padding="16dp"
         tools:context="zone.qube.databindingexample.listener.ListenerFragment">
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Listener bindings:"/>
+
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="@{() -> fragment.buttonClicked()}"
-            android:text="Do stuff"
+            android:onClick="@{() -> fragment.showToast(`Showing toast`)}"
+            android:text="Show Toast"
+            />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{() -> fragment.hasToastBeenShown() ? fragment.showToast(`blue`) : fragment.showToast(`red`)}"
+            android:text="First red then blue"
+            />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{() -> fragment.hasToastBeenShown() ? fragment.showToast(`Now showing another toast`) : void}"
+            android:text="Click after toast shown"
+            />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{(v) -> fragment.showToast(((TextView)v).getText().toString())}"
+            android:text="This one will show this text"
+            />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{() -> fragment.showToast(fragment.getClass().name)}"
+            android:text="Show fragment name"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Method references:"/>
+
+        <Button
+            android:id="@+id/method_reference_id_a"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{fragment::onButtonClick}"
+            android:text="Method reference button a"
+            />
+
+        <Button
+            android:id="@+id/method_reference_id_b"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{fragment::onButtonClick}"
+            android:text="Method reference button b"
             />
     </LinearLayout>
 </layout>
