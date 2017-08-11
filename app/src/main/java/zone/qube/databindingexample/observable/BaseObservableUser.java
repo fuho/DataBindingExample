@@ -5,7 +5,7 @@ import android.databinding.Bindable;
 
 import zone.qube.databindingexample.BR;
 
-public class User extends BaseObservable {
+public class BaseObservableUser extends BaseObservable {
     private String firstName;
     private String lastName;
 

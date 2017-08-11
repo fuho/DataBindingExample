@@ -7,7 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import zone.qube.databindingexample.databinding.ObservableBinding;
-import zone.qube.databindingexample.databinding.SimpleFragmentBinding;
+
 
 public class ObservableFragment extends Fragment {
 
@@ -18,7 +18,9 @@ public class ObservableFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle bundle) {
         final ObservableBinding binding = ObservableBinding.inflate(inflater);
-        binding.setUser(new User());
+        final ObservableUser user = new ObservableUser("Karl", "Marx");
+        user.setBook(new ObservableUser.Book("The Communist Manifesto", 8));
+        binding.setUser(user);
         return binding.getRoot();
     }
 }

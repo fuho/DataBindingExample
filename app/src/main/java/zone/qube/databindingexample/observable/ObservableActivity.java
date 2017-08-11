@@ -26,6 +26,10 @@ public class ObservableActivity extends AppCompatActivity {
         mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
         mSectionsPagerAdapter.screens.add(new SectionsPagerAdapter.Screen(
                 "BaseObservable",
+                BaseObservableFragment.newInstance()
+        ));
+        mSectionsPagerAdapter.screens.add(new SectionsPagerAdapter.Screen(
+                "Observable",
                 ObservableFragment.newInstance()
         ));
         mSectionsPagerAdapter.screens.add(new SectionsPagerAdapter.Screen(
