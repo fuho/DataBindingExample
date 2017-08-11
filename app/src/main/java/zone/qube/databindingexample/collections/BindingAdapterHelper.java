@@ -14,7 +14,7 @@ import zone.qube.databindingexample.BR;
 
 public class BindingAdapterHelper {
     @BindingAdapter({"entries", "entry_layout"})
-    public static <T> void setEntries(ViewGroup viewGroup, ObservableArrayList<T> entries, int layoutId) {
+    public static <T> void setEntries(ViewGroup viewGroup, List<T> entries, int layoutId) {
         viewGroup.removeAllViews();
         if (entries != null) {
             LayoutInflater inflater = (LayoutInflater) viewGroup

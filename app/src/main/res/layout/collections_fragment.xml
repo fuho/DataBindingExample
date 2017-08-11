@@ -20,6 +20,5 @@
         android:padding="8dp"
         app:entries="@{library.books}"
         app:entry_layout="@{@layout/layout_book}"
-        tools:context="zone.qube.databindingexample.user.UserFragment">
-    </LinearLayout>
+        tools:context="zone.qube.databindingexample.user.UserFragment"/>
 </layout>
