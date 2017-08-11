@@ -1,0 +1,25 @@
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+
+    <data class="CollectionsBinding">
+
+        <variable
+            name="library"
+            type="zone.qube.databindingexample.collections.Library"
+            />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="8dp"
+        app:entries="@{library.books}"
+        app:entry_layout="@{@layout/layout_book}"
+        tools:context="zone.qube.databindingexample.user.UserFragment">
+    </LinearLayout>
+</layout>

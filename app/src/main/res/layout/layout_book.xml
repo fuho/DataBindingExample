@@ -1,0 +1,45 @@
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+
+    <data>
+
+        <variable
+            name="data"
+            type="zone.qube.databindingexample.collections.Library.Book"
+            />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:background="@color/colorPrimaryDark"
+        android:orientation="vertical"
+        android:padding="16dp"
+
+        tools:showIn="@layout/collections_fragment">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{data.title}"
+            android:textColor="#2fdfef"
+            android:textSize="20sp"
+            tools:text="Book Title"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:text="@{data.author}"
+            android:textAllCaps="true"
+            android:textColor="#c287ff"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            tools:text="Author Name"
+            />
+    </LinearLayout>
+</layout>

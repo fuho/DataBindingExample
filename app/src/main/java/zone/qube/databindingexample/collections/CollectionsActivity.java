@@ -1,4 +1,4 @@
-package zone.qube.databindingexample.observable;
+package zone.qube.databindingexample.collections;
 
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
@@ -9,10 +9,11 @@ import android.support.v7.widget.Toolbar;
 import zone.qube.databindingexample.R;
 import zone.qube.databindingexample.SectionsPagerAdapter;
 import zone.qube.databindingexample.SwitchActivityFragment;
-import zone.qube.databindingexample.collections.CollectionsActivity;
+import zone.qube.databindingexample.observable.BaseObservableFragment;
+import zone.qube.databindingexample.observable.ObservableFragment;
 import zone.qube.databindingexample.simple.BasicsActivity;
 
-public class ObservableActivity extends AppCompatActivity {
+public class CollectionsActivity extends AppCompatActivity {
 
     private SectionsPagerAdapter mSectionsPagerAdapter;
     private ViewPager mViewPager;
@@ -26,16 +27,12 @@ public class ObservableActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
         mSectionsPagerAdapter.screens.add(new SectionsPagerAdapter.Screen(
-                "BaseObservable",
-                BaseObservableFragment.newInstance()
-        ));
-        mSectionsPagerAdapter.screens.add(new SectionsPagerAdapter.Screen(
-                "Observable",
-                ObservableFragment.newInstance()
+                "Collection",
+                CollectionsFragment.newInstance()
         ));
         mSectionsPagerAdapter.screens.add(new SectionsPagerAdapter.Screen(
                 "Next",
-                SwitchActivityFragment.newInstance(CollectionsActivity.class)
+                SwitchActivityFragment.newInstance(BasicsActivity.class)
         ));
 
 
